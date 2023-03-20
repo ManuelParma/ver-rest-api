@@ -1,1 +1,7 @@
-<p>item works!</p>
+<div *ngIf="driver">
+  <p>First name: {{ driver.givenName }}</p>
+  <p>Last name: {{ driver.familyName }}</p>
+  <p>Date of Birth: {{ driver.dateOfBirth }}</p>
+  <p>Nationality: {{ driver.nationality }}</p>
+  <p><a href="{{ driver.url }}">Wikipedia</a></p>
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { F1Service } from '../f1.service';
-import { Driver } from '../models/driver.model';
+import { Driver } from '../models/drivers/driver.model';
 
 @Component({
   selector: 'app-search',
