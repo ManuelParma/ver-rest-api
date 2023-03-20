@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Response } from './models/drivers/response.model';
-import Res from './models/driver/response.model';
+import { Response } from './models/response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,7 @@ export class F1Service {
     return this.http.get<Response>(`${this.url}.json`);
   }
 
-  public getDriver(id: string): Observable<Res> {
-    return this.http.get<Res>(`${this.url}/${id}.json`);
+  public getDriver(id: string): Observable<Response> {
+    return this.http.get<Response>(`${this.url}/${id}.json`);
   }
 }

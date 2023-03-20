@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { F1Service } from '../f1.service';
-import { Driver } from '../models/drivers/driver.model';
+import { Driver } from '../models/driver.model';
+import { Response } from '../models/response.model';
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,7 @@ export class SearchComponent implements OnInit {
   fDrivers!: Driver[];
 
   constructor(f1: F1Service) {
-    f1.getDrivers().subscribe((drivers) => {
+    f1.getDrivers().subscribe((drivers: Response) => {
       this.drivers = drivers.MRData.DriverTable.Drivers;
       this.fDrivers = this.drivers;
     });

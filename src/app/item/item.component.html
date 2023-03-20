@@ -1,8 +1,28 @@
-<div *ngIf="driver">
-  <p>First name: {{ driver.givenName }}</p>
-  <p>Last name: {{ driver.familyName }}</p>
-  <p>Date of Birth: {{ driver.dateOfBirth }}</p>
-  <p>Nationality: {{ driver.nationality }}</p>
-  <p><a href="{{ driver.url }}">Wikipedia</a></p>
+  <div *ngIf="driver" class="container-fluid text-center d-flex justify-content-center">
+  <div class="card col-6">
+    <div class="row">
+      <div class="col-6">
+        <p>First name: {{ driver.givenName }}</p>
+      </div>
+      <div class="col-6">
+        <p>Last name: {{ driver.familyName }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <p>Date of Birth: {{ driver.dateOfBirth }}</p>
+      </div>
+      <div class="col-6">
+        <p>Nationality: {{ driver.nationality }}</p>
+      </div>
+    </div>
+    <p class="col-12">
+      <a href="{{ driver.url }}" class="btn btn-primary col-11" target="_blank"
+        >Wikipedia</a
+      >
+    </p>
+  </div>
+  <a href="javascript:void(0)" (click)="back()" class="btn btn-primary position-absolute end-0"
+    >Go back</a
+  >
 </div>
-<a href="javascript:void(0)" (click)="back()">Go back</a>

@@ -1,8 +1,11 @@
-<input (keyup)="filter($event)" type="text" name="sd" id="sd" />
-<div *ngIf="drivers">
-  <ul>
-    <li *ngFor="let d of fDrivers">
-      <a href="javascript:void(0)" [routerLink]="['/item-formula1', d.driverId]"
+<div *ngIf="drivers" class="container-fluid">
+  <input (keyup)="filter($event)" type="text" name="sd" id="sd" class="form-control mb-3" />
+  <ul class="list-inline">
+    <li *ngFor="let d of fDrivers" class="list-inline-item col-1 mb-2">
+      <a
+        href="javascript:void(0)"
+        [routerLink]="['/item-formula1', d.driverId]"
+        class="card  text-center"
         >{{ d.givenName }} {{ d.familyName }}</a
       >
     </li>
