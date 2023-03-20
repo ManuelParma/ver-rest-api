@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { F1Service } from '../f1.service';
 import { Driver } from '../models/driver/driver.model';
 import Response from '../models/driver/response.model';
@@ -12,7 +13,7 @@ import Response from '../models/driver/response.model';
 export class ItemComponent implements OnInit {
   driver!: Driver;
 
-  constructor(private f1: F1Service, private route: ActivatedRoute) {}
+  constructor(private f1: F1Service, private route: ActivatedRoute, public location: Location) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(p => {
@@ -21,5 +22,9 @@ export class ItemComponent implements OnInit {
         this.driver = driver.MRData.DriverTable.Drivers[0];
       });
     });
+  }
+
+  back(): void {
+    this.location.back();
   }
 }
